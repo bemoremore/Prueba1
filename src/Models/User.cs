@@ -8,7 +8,9 @@ namespace Prueba1_Real.src.Models
 {
     public class User
     {
+        
         [RegularExpression(@"[0-9]{8}-[0-9]{1}", ErrorMessage = "Debe ingresar un rut valido.")]
+        [Key]
         public string Rut { get; set; } = string.Empty;
         [StringLength(100,MinimumLength = 3,ErrorMessage = "El nombre debe tener entre 3 y 100 caracteres")]
         public string Nombre { get; set; } = string.Empty;
