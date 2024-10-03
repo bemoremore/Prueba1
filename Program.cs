@@ -9,6 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 string connectionString = "Data Source=app.db";
+builder.Services.AddControllers();
 
 builder.Services.AddDbContext<AppDBContext>(opt => opt.UseSqlite(connectionString));
 
@@ -31,6 +32,7 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
+app.MapControllers();
 
 
 

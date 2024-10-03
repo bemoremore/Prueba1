@@ -14,10 +14,12 @@ namespace Prueba1_Real.src.Interfaces
 
         Task SaveChanges();
 
-        Task SelectAll();
+
 
         Task<User?> FindByCode(string code);
 
         Task Delete(User user);
+
+        Task SelectAll();
     }
 }

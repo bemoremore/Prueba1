@@ -36,11 +36,6 @@ namespace Prueba1_Real.src.Repositories
             await _dataContext.SaveChangesAsync();
         }
 
-        public async Task SelectAll()
-        {
-            await _dataContext.Users.ToListAsync();
-        }
-
         public async Task<User?> FindByCode(string rut)
         {
             return await _dataContext.Users.FirstOrDefaultAsync(p => p.Rut == rut)!;
@@ -50,6 +45,11 @@ namespace Prueba1_Real.src.Repositories
         {
             _dataContext.Users.Remove(user);
             await _dataContext.SaveChangesAsync(); // Asegúrate de guardar los cambios
+        }
+
+        public async Task SelectAll()
+        {
+            await _dataContext.Users.ToListAsync();
         }
     }
 }
