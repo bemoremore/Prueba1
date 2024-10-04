@@ -7,7 +7,7 @@ using Prueba1_Real.src.Interfaces;
 
 namespace Prueba1_Real.src.Controllers
 {
-    [Route("api/user")]
+    [Route("user")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -24,7 +24,7 @@ namespace Prueba1_Real.src.Controllers
             await _userRepository.SelectAll();
             return Ok("Usuarios obtenidos exitosamente");
         }
-        
+
         [HttpPut("{rut}")]
         public async Task<IActionResult> Put(string rut, [FromBody] DTOs.UpdateUserDto user)
         {
